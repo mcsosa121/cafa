@@ -77,10 +77,6 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATE_DIRS = [
-    os.path.join(PROJECT_PATH, 'cafaapp/views')
-]
-
 WSGI_APPLICATION = 'cafa.wsgi.application'
 
 
