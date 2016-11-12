@@ -9,8 +9,6 @@ from cafaapp.models import Job
 
 # Lazy user creation
 # TODO
-#user = User.objects.create_user('admin', 'admin@example.com', 'password')
-#user.save()
 user, created = User.objects.get_or_create(username='admin', email='admin@example.com')
 if created:
     user.set_password('password')
@@ -67,7 +65,7 @@ def loginuser(request):
 @csrf_exempt
 def index(request):
     template = loader.get_template("cafaapp/templates/index.jade")
-    return HttpResponse(template.render())	
+    return HttpResponse(template.render())
 
 @csrf_exempt
 def jobupdated(request):
