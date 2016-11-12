@@ -6,4 +6,5 @@ def login(request):
     return HttpResponse(template.render())	
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    template = loader.get_template("cafaapp/views/index.jade")
+    return HttpResponse(template.render())	
