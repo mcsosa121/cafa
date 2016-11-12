@@ -1,12 +1,13 @@
 html
     include _common
     body
-        .container
-            h2 Enter your job id
-            form(action='/cafa/ext/job' method='post')
-                .mdl-textfield.mdl-js-textfield
-                    label.mdl-textfield__label(for='jid') Job Id
-                    input#jid.mdl-textfield__input(name='jid' placeholder='Job ID')
-                br
-                button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit')
-                    | Submit
+        #top
+            .container
+                h2 Enter your job id
+                form(action='/cafa/ext/job' method='post')
+                    .mdl-textfield.mdl-js-textfield
+                        label.mdl-textfield__label(for='jid') Job Id
+                        input#jid.mdl-textfield__input(name='jid' placeholder='Job ID')
+                    br
+                    button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit')
+                        | Submit
