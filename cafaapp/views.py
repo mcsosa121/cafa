@@ -11,6 +11,9 @@ from cafaapp.models import Job
 # TODO
 #user = User.objects.create_user('admin', 'admin@example.com', 'password')
 #user.save()
+user, created = User.objects.get_or_create(username='admin', email='admin@example.com')
+if created:
+    user.set_password('password')
 
 @csrf_exempt
 def loginext(request):
