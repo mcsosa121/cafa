@@ -11,6 +11,8 @@ from django.utils import timezone
 
 from cafaapp.models import House
 from cafaapp.models import Job
+from cafaapp.models import Image
+
 
 class LazyEncoder(DjangoJSONEncoder):
     def default(self, obj):
@@ -62,7 +64,6 @@ def make_job(request):
         comment = request.POST.get('comment', False)
         scheduled_time = request.POST.get('scheduled_time', False)
         house_ref = House.objects.filter(hid=request.POST.get('house_ref', False))[0]
-
         j = Job(type=type,request_comment=comment,scheduled_time=scheduled_time,house_ref=house_ref)
         j.save()
         return HttpResponseRedirect('views.dash')
@@ -71,10 +72,13 @@ def make_job(request):
 @csrf_exempt
 def complete_job(request):
     if (request.method == 'POST'):
+        docfile = request.FILES.get('img',False)
         j = Job.objects.filter(jid=request.session['jid'])[0]
         j.completion_comment = request.POST.get('comment', False)
         j.completion_time = timezone.now()
-        j.save() #TODO: Images here
+        im = Image(docfile=docfile, job_ref=j)
+        j.save() #TODO: More than 1 img
+        im.save()
         return HttpResponseRedirect('/cafa/ext/jobupdated')
     raise Http404("u missin stuff!!!!")
 

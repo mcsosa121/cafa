@@ -29,7 +29,6 @@ class Job(models.Model):
     house_ref = models.ForeignKey(House)
 
 class Image(models.Model):
-    name = models.CharField(max_length = 100000)
     comment = models.CharField(max_length = 100000)
     docfile = models.ImageField(upload_to='documents/%Y/%m/%d')
     job_ref = models.ForeignKey(Job)
