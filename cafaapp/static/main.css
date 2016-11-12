@@ -1,6 +1,16 @@
 body {
     font-family: 'Rajdhani', sans-serif;
+    text-align: center;
 }
+
+form {
+    width: 100%;
+}
+
+@media (min-width: 500px) {
+    .container{
+        max-width: 500px;
+    }}
 
 #top {
     width: 100%;

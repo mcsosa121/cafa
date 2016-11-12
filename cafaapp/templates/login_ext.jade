@@ -1,0 +1,12 @@
+html
+    include _common
+    body
+        .container
+            h2 Enter your job id
+            form(action='/cafa/ext/login' method='post')
+                .mdl-textfield.mdl-js-textfield
+                    label.mdl-textfield__label(for='jid') Job Id
+                    input#jid.mdl-textfield__input(type='text' placeholder='Job ID')
+                br
+                button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit')
+                    | Submit
