@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 
+from cafaapp.models import Job
+
 
 # Lazy user creation
 # TODO
@@ -83,5 +85,10 @@ def viewcontract(request):
 
 @csrf_exempt
 def job(request):
-    template = loader.get_template("cafaapp/templates/ext/do_job.jade")
-    return HttpResponse(template.render())
+    if request.method == 'POST':
+        j = request.POST.get('jid',False)
+        print(j)
+        actualJob = Job.objects.filter(jid = j)[0]
+        request.session['jid']=j
+        template = loader.get_template("cafaapp/templates/ext/do_job.jade")
+        return HttpResponse(template.render())

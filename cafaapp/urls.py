@@ -20,5 +20,10 @@ urlpatterns = [
     # API
     url(r'^api/create_contract$', restful.create_contract, name='create contract'),
     url(r'^api/get_contracts', restful.get_all_contracts, name='get contract'),
+    url(r'^api/make_job', restful.make_job, name='make job'),
+    url(r'^api/complete_job', restful.complete_job, name='complete job'),
+    url(r'^api/approve_job', restful.approve_job, name='approve job'),
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

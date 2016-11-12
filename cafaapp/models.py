@@ -22,9 +22,10 @@ class Job(models.Model):
     jid = models.AutoField(primary_key=True)
     type = models.CharField(max_length = 10000)
     approval_status = models.BooleanField(default=False)
-    comment = models.CharField(max_length = 100000)
-    scheduled_time = models.DateField()
-    completion_time = models.DateField(blank=True)
+    request_comment = models.CharField(max_length = 100000, default='request')
+    completion_comment = models.CharField(max_length = 100000, default='incomplete')
+    scheduled_time = models.DateTimeField() #2016-12-11 12:11
+    completion_time = models.DateTimeField(null=True)
     house_ref = models.ForeignKey(House)
 
 class Image(models.Model):

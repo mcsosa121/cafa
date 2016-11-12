@@ -1,4 +1,12 @@
 html
     include _common
     body
-        p TODO
+        .container
+            h2 U do a good job m8?
+            form(action='/cafa/api/complete_job' method='post')
+                .mdl-textfield.mdl-js-textfield
+                    label.mdl-textfield__label(for='comment') Comment
+                    input#comment.mdl-textfield__input(name='comment' placeholder='Yeah boy')
+                br
+                button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit')
+                    | Submit
