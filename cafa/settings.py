@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +27,7 @@ SECRET_KEY = 'iw4y@22b*wvo)s_2n9qr#q&-$wxvj5t27m=7y%@6w3j5_&bcxw'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['109.228.48.141']
+ALLOWED_HOSTS = ['109.228.48.141', 'localhost']
 
 
 # Application definition
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'cafa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/root/cafa'],
+        'DIRS': [BASE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
