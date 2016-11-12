@@ -8,19 +8,15 @@ class MikeSosa(models.Model):
 
 # Actual models
 
-class Contract(models.Model):
-    cid = models.AutoField(primary_key=True)
-
 class House(models.Model):
     hid = models.AutoField(primary_key=True)
     lat = models.FloatField()
     lon = models.FloatField()
-    img_raw = models.CharField(max_length=99999999999)
+    img_docfile = models.ImageField(upload_to='documents/%Y/%m/%d')
     street = models.CharField(max_length = 100000)
     city = models.CharField(max_length = 100000)
     state = models.CharField(max_length = 100000)
     zip = models.CharField(max_length = 100000)
-    contract_ref = models.ForeignKey(Contract)
 
 class Job(models.Model):
     jid = models.AutoField(primary_key=True)
@@ -34,5 +30,5 @@ class Job(models.Model):
 class Image(models.Model):
     name = models.CharField(max_length = 100000)
     comment = models.CharField(max_length = 100000)
-    raw = models.CharField(max_length=99999999999)
+    docfile = models.ImageField(upload_to='documents/%Y/%m/%d')
     job_ref = models.ForeignKey(Job)

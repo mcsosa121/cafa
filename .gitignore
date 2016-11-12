@@ -1,3 +1,5 @@
 cafenv/
 .idea
 *.pyc
+media/
+migrations/
