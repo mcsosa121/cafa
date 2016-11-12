@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['109.228.48.141']
 # Application definition
 
 INSTALLED_APPS = [
+    'cafaapp.apps.CafaappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'cafa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/root/cafa'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
