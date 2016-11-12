@@ -17,6 +17,10 @@ form {
     opacity: 0.95;
 }
 
+.mycolor {
+    background-color: #000022;
+}
+
 button {
     opacity: 1;
 }
