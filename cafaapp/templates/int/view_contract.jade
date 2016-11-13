@@ -14,7 +14,7 @@ html
                   img.boxy(src="/media/#{imgref}")
               script.
                 function initMap() {
-                  var uluru = {lat: -25.363, lng: 131.044};
+                  var uluru = {lat: #{lat}, lng: #{lon}};
                   var map = new google.maps.Map(document.getElementById('map'), {
                   zoom: 4,
                   center: uluru
@@ -33,15 +33,13 @@ html
                             th Completed?
                             th Request
                             th Comments
-                            th Image
-                        each job, i in jobs
+                        for job in jobs
                             tr
                                 td #{job.type}
                                 td #{job.jid}
                                 td #{job.completed}
                                 td #{job.request_comment}
                                 td #{job.completion_comment}
-                                td #{job.img_ref}
 
                 .button
                     button#external.btn.btn-primary.btn-lg.opaque(onclick="location.href=('/cafa/int/new_job')")

@@ -116,10 +116,9 @@ def viewcontract(request):
         wow['request_comment']=djobs[i].request_comment
         wow['completion_comment']=djobs[i].completion_comment
         wow['completed']=not (djobs[i].completion_time is None)
-        wow['img_ref']="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background"
-        temp=Image.objects.filter(job_ref=djobs[i].jid)
-        if (len(temp) > 0):
-             wow['img_ref']= str(temp[0].docfile)
+        #temp=Image.objects.filter(job_ref=djobs[i].jid)
+        #if (len(temp) > 0):
+        #     wow['img_ref']= str(temp[0].docfile)
         jobs.append(wow)
     request.session['jobs'] = jobs
     return HttpResponse(template.render(context=request.session))
