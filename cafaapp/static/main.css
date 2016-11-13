@@ -39,9 +39,10 @@ button {
 #corn {
     background: url("/static/img/cornell_monet.png")  no-repeat center center scroll;
     width: 100%;
-	height: 100%;
+    height: 100%;
     background-size: cover;
     position: relative;
+    align: center;
     display: table;
 }
 
@@ -122,10 +123,32 @@ button {
 
 
 .vertical-center {
-  margin-top: 60%;
+  margin-top: 40%;
+}
+
+
+.btnContainer {
+  margin-top: 20px;
+  float: center;
+}
+
+
+#two {
+  position: relative;
+  height: 410px;
+  width: 43%;
+  margin: 0 auto;
+}
+#two img {
+  height: 400px;
+  width: 400px;
 }
 
 #map {
   height: 400px;
-  width: 100%;
+  width: 400px;
+}
+.imgContainer {
+  float:left;
+  margin: 5px;
 }

@@ -3,10 +3,12 @@ html
     body
     #yale
         .container
+          .jumbotron.vertical-center
             h1(align='center') Y Mae
             h5 House management Maed easy.
-            .jumbotron.vertical-center
-                button#external.btn.btn-primary.btn-lg.opaque(onclick="location.href=('/cafa/int/login')")
-                    | Office Analyst
-                button#internal.btn.btn-primary.btn-lg.opaque(onclick="location.href=('/cafa/ext/login')")
-                    | Field Agent
+            .btnContainer
+              button#external.btn.btn-primary.btn-lg.opaque(onclick="location.href=('/cafa/int/login')")
+                  | Office Analyst
+            .btnContainer
+              button#internal.btn.btn-primary.btn-lg.opaque(onclick="location.href=('/cafa/ext/login')")
+                  | Field Agent
