@@ -122,7 +122,8 @@ def job(request):
         print(j)
         actualJob = Job.objects.filter(jid = j)[0]
         request.session['jid']=j
-        request.session['job']=actualJob.request_comment
+        request.session['type']=actualJob.type
+        request.session['comment']=actualJob.request_comment
         template = loader.get_template("cafaapp/templates/ext/do_job.jade")
         return HttpResponse(template.render(context=request.session))
 
