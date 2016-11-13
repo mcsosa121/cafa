@@ -9,6 +9,7 @@ from . import restful
 
 
 urlpatterns = [
+    url(r'', views.index,name='home'),
     url(r'^$', views.index, name='index'),
     url(r'^int/login$', views.loginuser, name='login'),
     url(r'^int/dashboard', views.dash, name='dash'),
