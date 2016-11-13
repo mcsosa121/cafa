@@ -3,14 +3,15 @@ html
     body
         #fm
             .container
-                h2 Please Log In
-                form(action='/cafa/int/login' method='post')
-                    .mdl-textfield.mdl-js-textfield
-                        label.mdl-textfield__label(for='username') Username
-                        input#username.mdl-textfield__input(name='username' placeholder='Username')
-                    .mdl-textfield.mdl-js-textfield
-                        label.mdl-textfield__label(for='pwd') Password 
-                        input#pwd.mdl-textfield__input(name='pwd', type='password', placeholder='Password')
-                    br
-                    button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit')
-                        | Submit
+                .jumbotron.vertical-center
+                    h2 Please Log In
+                    form(action='/cafa/int/login' method='post')
+                        .mdl-textfield.mdl-js-textfield
+                            label.mdl-textfield__label(for='username') Username
+                            input#username.mdl-textfield__input(name='username' placeholder='Username')
+                        .mdl-textfield.mdl-js-textfield
+                            label.mdl-textfield__label(for='pwd') Password
+                            input#pwd.mdl-textfield__input(name='pwd', type='password', placeholder='Password')
+                        br
+                        button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit')
+                            | Submit
