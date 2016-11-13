@@ -43,9 +43,9 @@ html
                                 td #{job.completion_comment}
                                 td #{job.img_ref}
 
-
                 .button
-                    a.glyphicon.glyphicon-plus(href='/cafa/int/new_job')
+                    button#external.btn.btn-primary.btn-lg.opaque(onclick="location.href=('/cafa/int/new_job')")
+                      | New Job
           script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh53x5vw5NPtjK4f57EMMzdT49y7AZp5k&callback=initMap").
         yphicon-plus(href='/cafa/int/new_job')
 

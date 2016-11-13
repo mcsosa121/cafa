@@ -103,7 +103,9 @@ button {
 .button {
     height: 100 px;
     float: center;
+    margin-top: 10px;
     margin-bottom: 10px;
+    background-color: fafafa;
 }
 
 #ugh {
@@ -150,4 +152,11 @@ button {
 .imgContainer {
   float:left;
   margin: 5px;
+}
+.panel {
+  background-color: fafafa;
+}
+
+.panel-default > .panel-heading {
+  background-color: fafafa;
 }
