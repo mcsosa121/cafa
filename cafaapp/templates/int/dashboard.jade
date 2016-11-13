@@ -2,7 +2,7 @@ html
     include _common
     body
         #container
-            .top
+            #fm
               .panel.panel-default
                   .panel-heading Houses
                       table.table#house-table
@@ -11,8 +11,8 @@ html
                               th Latitude
                               th Longitude
                               th ID
-            .button
-              a.glyphicon.glyphicon-plus(href='/cafa/int/new_contract')
+              .button
+                a.glyphicon.glyphicon-plus(href='/cafa/int/new_contract')
         script(src="https://code.jquery.com/jquery-3.1.1.min.js")
         script.
             function rpush(x) {

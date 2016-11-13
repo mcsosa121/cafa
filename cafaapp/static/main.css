@@ -1,5 +1,4 @@
 body {
-    background: url("/static/img/yale.png")  no-repeat center center scroll;
     width: 100%;
     font-family: 'Rajdhani', sans-serif;
     text-align: center;
@@ -35,6 +34,33 @@ button {
 #container {
     width: 100%;
     height: 100%;
+}
+
+#corn {
+    background: url("/static/img/cornell_monet.png")  no-repeat center center scroll;
+    width: 100%;
+	height: 100%;
+    background-size: cover;
+    position: relative;
+    display: table;
+}
+
+#yale {
+    background: url("/static/img/yale.png")  no-repeat center center scroll;
+    width: 100%;
+	height: 100%;
+    background-size: cover;
+    position: relative;
+    display: table;
+}
+
+#fm {
+    background: url("/static/img/fm3.png")  no-repeat center center scroll;
+    width: 100%;
+	height: 100%;
+    background-size: cover;
+    position: relative;
+    display: table;
 }
 
 .top {
@@ -74,4 +100,6 @@ button {
 
 .vertical-center {
   margin-top: 60%;
+}
+.container {
 }

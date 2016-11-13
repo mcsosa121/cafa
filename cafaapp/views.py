@@ -32,7 +32,7 @@ def loginext(request):
             # Return an 'invalid login' error message.
             #login(request, user) #todo
             print("FAIL")
-            template = loader.get_template("cafaapp/templates/login.html")
+            template = loader.get_template("cafaapp/templates/login_ext.jade")
             return HttpResponse(template.render())
 
 @csrf_exempt
@@ -43,7 +43,7 @@ def dash(request):
 @csrf_exempt
 def loginuser(request):
     if request.method == 'GET':
-        template = loader.get_template("cafaapp/templates/login.html")
+        template = loader.get_template("cafaapp/templates/login_int.jade")
         return HttpResponse(template.render())
     elif request.method == 'POST':
         username = request.POST.get('username', False)
@@ -59,7 +59,7 @@ def loginuser(request):
             # Return an 'invalid login' error message.
             #login(request, user) #todo
             print("FAIL")
-            template = loader.get_template("cafaapp/templates/login.html")
+            template = loader.get_template("cafaapp/templates/login_int.jade")
             return HttpResponse(template.render())
 
 @csrf_exempt

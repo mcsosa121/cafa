@@ -1,4 +1,15 @@
 html
     include _common
     body
-        p TODO
+        H1 Contract-Job Dashboard
+
+
+
+        script(src="https://code.jquery.com/jquery-3.1.1.min.js")
+        script.
+            $.ajax({
+                url: '/cafa/api/get_contracts',
+                success: function(res) {
+                        $('H1').after('<h2>'+ res[0].street + '</h2>');
+                    }
+                })
