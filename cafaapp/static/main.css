@@ -17,6 +17,9 @@ form {
     .container{
         max-width: 500px;
     }}
+.panel {
+   background-color: e0e0e0;
+}
 
 .jumbotron {
     background-color: #FFAC76;
@@ -98,13 +101,9 @@ button {
 }
 
 .button {
-    background-color: #DFE2DB;
-    position: relative;
-    left: 45%;
-    right: 55%;
-    width: 10%;
-    height: 15px;
+    height: 100 px;
     float: center;
+    margin-bottom: 10px;
 }
 
 #ugh {

@@ -3,7 +3,7 @@ html
     body
         #fm
               .panel.panel-default
-                  .panel-heading Houses
+                  H1 Houses
                       table.table#house-table
                           tr#start
                               th Address
@@ -11,7 +11,8 @@ html
                               th Longitude
                               th ID
                   .button
-                    a.glyphicon.glyphicon-plus(href='/cafa/int/new_contract')
+                    button#external.btn.btn-primary.btn-lg.opaque(onclick="location.href=('/cafa/int/new_contract')")
+                      | New House
         script(src="https://code.jquery.com/jquery-3.1.1.min.js")
         script.
             function rpush(x) {
