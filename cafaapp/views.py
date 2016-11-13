@@ -98,9 +98,12 @@ def viewcontract(request):
     house = House.objects.filter(hid=hid)[0]
     request.session['street'] = house.street
     request.session['city'] = house.city
+    request.session['state'] = house.state
     request.session['zip'] = house.zip
     request.session['lat'] = house.lat
     request.session['lon'] = house.lon
+    request.session['imgref'] = str(house.img_docfile)
+
     jobs = []
     djobs = Job.objects.filter(house_ref=house)
     for i in xrange(len(djobs)):
