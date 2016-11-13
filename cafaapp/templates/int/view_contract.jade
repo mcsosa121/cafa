@@ -24,6 +24,7 @@ html
                     table.table#job-table
                         tr#start
                             th Type
+                            th ID Number
                             th Completed?
                             th Request
                             th Comments
@@ -31,6 +32,7 @@ html
                         for job in jobs
                             tr
                                 td #{job.type}
+                                td #{job.jid}
                                 td #{job.completed}
                                 td #{job.request_comment}
                                 td #{job.completion_comment}
