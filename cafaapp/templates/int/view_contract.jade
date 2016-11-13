@@ -2,26 +2,43 @@ html
     include _common
     body
         #fm
-          H1 Contract-Job Dashboard
-          H2 Map Location
-          #map
-          script.
-            function initMap() {
-              var uluru = {lat: -25.363, lng: 131.044};
-              var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 4,
-              center: uluru
-              });
-              var marker = new google.maps.Marker({
-              position: uluru,
-              map: map
-              });
-            }
-
+            .jumbotron
+              h2 House Dashboard
+              p #{street}, #{city}, #{state} #{zip}
+              h4 Map Location
+              #map
+              script.
+                function initMap() {
+                  var uluru = {lat: -25.363, lng: 131.044};
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 4,
+                  center: uluru
+                  });
+                  var marker = new google.maps.Marker({
+                  position: uluru,
+                  map: map
+                  });
+                }
+            .panel.panel-default
+                .panel-heading Jobs
+                    table.table#job-table
+                        tr#start
+                            th Type
+                            th Completed?
+                            th Request
+                            th Comments
+                            th Image
+                        for job in jobs
+                            tr
+                                td #{job.type}
+                                td #{job.completed}
+                                td #{job.request_comment}
+                                td #{job.completion_comment}
+                                td to do
+                .button
+                    a.glyphicon.glyphicon-plus(href='/cafa/int/new_job')
           script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh53x5vw5NPtjK4f57EMMzdT49y7AZp5k&callback=initMap").
-          H2 Jobs
-
-
+        yphicon-plus(href='/cafa/int/new_job')
 
           script(src="https://code.jquery.com/jquery-3.1.1.min.js")
           script.

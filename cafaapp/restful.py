@@ -63,11 +63,11 @@ def make_job(request):
     if (request.method == 'POST'):
         type = request.POST.get('type', False)
         comment = request.POST.get('comment', False)
-        scheduled_time = request.POST.get('scheduled_time', False)
-        house_ref = House.objects.filter(hid=request.POST.get('house_ref', False))[0]
+        scheduled_time = '1995-12-11 12:11'#request.POST.get('scheduled_time', False)
+        house_ref = House.objects.filter(hid=request.session['hid'])[0]
         j = Job(type=type,request_comment=comment,scheduled_time=scheduled_time,house_ref=house_ref)
         j.save()
-        return HttpResponseRedirect('views.dash')
+        return HttpResponseRedirect('/cafa/int/dashboard')
     raise Http404("u missin stuff!!!!")
 
 @csrf_exempt

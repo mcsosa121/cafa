@@ -7,6 +7,7 @@ from django.shortcuts import render
 
 
 from cafaapp.models import Job
+from cafaapp.models import House
 
 
 # Lazy user creation
@@ -80,6 +81,11 @@ def newcontract(request):
     return HttpResponse(template.render())
 
 @csrf_exempt
+def newjob(request):
+    template = loader.get_template("cafaapp/templates/int/new_job.jade")
+    return HttpResponse(template.render())
+
+@csrf_exempt
 def mfga(request):
     template = loader.get_template("cafaapp/templates/int/mfga.jade")
     return HttpResponse(template.render())
@@ -87,7 +93,27 @@ def mfga(request):
 @csrf_exempt
 def viewcontract(request):
     template = loader.get_template("cafaapp/templates/int/view_contract.jade")
-    return HttpResponse(template.render())
+    hid = request.GET.get('hid')
+    request.session['hid'] = hid
+    house = House.objects.filter(hid=hid)[0]
+    request.session['street'] = house.street
+    request.session['city'] = house.city
+    request.session['zip'] = house.zip
+    request.session['lat'] = house.lat
+    request.session['lon'] = house.lon
+    jobs = []
+    djobs = Job.objects.filter(house_ref=house)
+    for i in xrange(len(djobs)):
+        wow = {}
+        wow['jid']=djobs[i].jid
+        wow['type']=djobs[i].type
+        wow['approval_status']=djobs[i].approval_status
+        wow['request_comment']=djobs[i].request_comment
+        wow['completion_comment']=djobs[i].completion_comment
+        wow['completed']=not (djobs[i].completion_time is None)
+        jobs.append(wow)
+    request.session['jobs'] = jobs
+    return HttpResponse(template.render(context=request.session))
 
 @csrf_exempt
 def job(request):

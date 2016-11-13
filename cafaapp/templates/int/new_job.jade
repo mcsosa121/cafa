@@ -1,0 +1,18 @@
+html
+    include _common
+    body
+        #fm
+            .container
+                .jumbotron
+                    h2 Create New Job
+                    form#thing(action='/cafa/api/make_job' method='post')
+                        .mdl-textfield.mdl-js-textfield
+                            label.mdl-textfield__label(for='type') Type
+                            input#type.mdl-textfield__input(name='type', type='text', placeholder='Type')
+
+                        .mdl-textfield.mdl-js-textfield
+                            label.mdl-textfield__label(for='comment') Comments
+                            input#comment.mdl-textfield__input(name='comment', type='text', placeholder='Comments')
+
+                        button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit')
+                            | Submit

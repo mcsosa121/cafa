@@ -23,7 +23,7 @@ html
                 success: function(res) {
                     for (var i = 0; i < res.length; i++) {
                         var $cur = $('tr').last();
-                        $cur.after('<tr><td><a href="/cafa/int/view_contract/' + res[i].hid + '">' + res[i].street + ', ' + res[i].city + ', ' + res[i].state + ' ' + res[i].zip + '</a></td>' + rpush(res[i].lat) + rpush(res[i].lon) + rpush(res[i].hid) + '</tr>');
+                        $cur.after('<tr><td><a href="/cafa/int/view_contract/?hid=' + res[i].hid + '">' + res[i].street + ', ' + res[i].city + ', ' + res[i].state + ' ' + res[i].zip + '</a></td>' + rpush(res[i].lat) + rpush(res[i].lon) + rpush(res[i].hid) + '</tr>');
                     }
                 }
             })
