@@ -4,14 +4,15 @@ html
         #corn
             .container
                 .jumbotron.vertical-center
-                    h2 Please leave any comments on the job below.
+                    h2 Job: #{job}
+                    h3 Please leave any comments on the job below.
                     form#wowww(action='/cafa/api/complete_job' method='post')
                         .mdl-textfield.mdl-js-textfield
                             label.mdl-textfield__label(for='comment') Comment
                             input#comment.mdl-textfield__input(name='comment' placeholder='Did this and that...')
                         br
                         label(for='img' ) Upload an image to show the work done.
-                        input#img(name='img' type='file') Upload an image to show the work done.
+                        input#img(name='img' type='file') Upload an image of your work.
                         br
                         br
                         button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(type='submit')

@@ -3,6 +3,8 @@ from django.template import Context, loader
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render
+
 
 from cafaapp.models import Job
 
@@ -94,5 +96,7 @@ def job(request):
         print(j)
         actualJob = Job.objects.filter(jid = j)[0]
         request.session['jid']=j
+        request.session['job']=actualJob.request_comment
         template = loader.get_template("cafaapp/templates/ext/do_job.jade")
-        return HttpResponse(template.render())
+        return HttpResponse(template.render(context=request.session))
+
