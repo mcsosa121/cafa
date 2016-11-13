@@ -37,7 +37,7 @@ def create_contract(request):
         zip = request.POST.get('zip', False)
         contract = House(lat=lat, lon=lon,street=street,city=city,state=state,zip=zip,img_docfile=docfile)
         contract.save()
-        return HttpResponseRedirect('views.dash')
+        return HttpResponseRedirect('/cafa/int/dashboard')
     raise Http404("u missin stuff!!!!")
 
 def house_cereal(houses):
@@ -50,6 +50,7 @@ def house_cereal(houses):
         wow['lat']= houses[i].lat
         wow['street']= houses[i].street
         wow['city']= houses[i].city
+        wow['state']= houses[i].state
         wow['zip']= houses[i].zip
         wow['img']= '/cafa/media/' + force_text(houses[i].img_docfile)
 

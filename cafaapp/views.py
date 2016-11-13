@@ -8,7 +8,7 @@ from cafaapp.models import Job
 
 
 # Lazy user creation
-# TODO
+#todo
 user, created = User.objects.get_or_create(username='admin', email='admin@example.com')
 if created:
     user.set_password('password')
@@ -30,7 +30,7 @@ def loginext(request):
             return HttpResponse(template.render())
         else:
             # Return an 'invalid login' error message.
-            #login(request, user) #TODO
+            #login(request, user) #todo
             print("FAIL")
             template = loader.get_template("cafaapp/templates/login.html")
             return HttpResponse(template.render())
@@ -57,7 +57,7 @@ def loginuser(request):
             return HttpResponse(template.render())
         else:
             # Return an 'invalid login' error message.
-            #login(request, user) #TODO
+            #login(request, user) #todo
             print("FAIL")
             template = loader.get_template("cafaapp/templates/login.html")
             return HttpResponse(template.render())

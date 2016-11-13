@@ -5,32 +5,28 @@ html
             h2 Create New Contract
             form#thing(action='/cafa/api/create_contract' method='post')
                 .mdl-textfield.mdl-js-textfield
-                    label.mdl-textfield__label(for='hid') House ID
-                    input#hid.mdl-textfield__input(type='text' placeholder='House ID')
-
-                .mdl-textfield.mdl-js-textfield
                     label.mdl-textfield__label(for='lat') Latitude
-                    input#lat.mdl-textfield__input(type='text' placeholder='Latitude')
+                    input#lat.mdl-textfield__input(name='lat', type='text', placeholder='Latitude')
 
                 .mdl-textfield.mdl-js-textfield
                     label.mdl-textfield__label(for='lon') Longitude
-                    input#lon.mdl-textfield__input(type='text' placeholder='Longitude')
+                    input#lon.mdl-textfield__input(name='lon', type='text', placeholder='Longitude')
 
                 .mdl-textfield.mdl-js-textfield
                     label.mdl-textfield__label(for='street') Street
-                    input#street.mdl-textfield__input(type='text' placeholder='Street')
+                    input#street.mdl-textfield__input(name='street', type='text', placeholder='Street')
 
                 .mdl-textfield.mdl-js-textfield
                     label.mdl-textfield__label(for='city') City
-                    input#city.mdl-textfield__input(type='text' placeholder='City')
+                    input#city.mdl-textfield__input(name='city', type='text', placeholder='City')
 
                 .mdl-textfield.mdl-js-textfield
                     label.mdl-textfield__label(for='state') State
-                    input#state.mdl-textfield__input(type='text' placeholder='State')
+                    input#state.mdl-textfield__input(name='state', type='text', placeholder='State')
 
                 .mdl-textfield.mdl-js-textfield
-                    label.mdl-textfield__label(for='lon') Zip
-                    input#zip.mdl-textfield__input(type='text' placeholder='Zip')
+                    label.mdl-textfield__label(for='zip') Zip
+                    input#zip.mdl-textfield__input(name='zip', type='text', placeholder='Zip')
 
                 br
                 label(for='img') Upload an image

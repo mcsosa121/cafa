@@ -18,5 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^cafa/', include('cafaapp.urls')), 
+    url(r'', include('cafaapp.urls')), 
 ]
