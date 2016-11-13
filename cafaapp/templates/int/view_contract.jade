@@ -4,10 +4,14 @@ html
         #fm
             .jumbotron
               h2 House Dashboard
-              img.boxy(src="/media/#{imgref}")
               p #{street}, #{city}, #{state} #{zip}
-              h4 Map Location
-              #map
+              #two
+                .imgContainer
+                  h4 Map Location
+                  #map
+                .imgContainer
+                  h4 Image
+                  img.boxy(src="/media/#{imgref}")
               script.
                 function initMap() {
                   var uluru = {lat: -25.363, lng: 131.044};
