@@ -1,30 +1,30 @@
 html
     include _common
     body
-        #container
-            #fm
-              .panel.panel-default
-                  .panel-heading Houses
-                      table.table#house-table
-                          tr#start
-                              th Address
-                              th Latitude
-                              th Longitude
-                              th ID
-              .button
-                a.glyphicon.glyphicon-plus(href='/cafa/int/new_contract')
-        script(src="https://code.jquery.com/jquery-3.1.1.min.js")
-        script.
-            function rpush(x) {
-                return '<td>' + x + '</td>';
-            }
-
-            $.ajax({
-                url: '/cafa/api/get_contracts',
-                success: function(res) {
-                    for (var i = 0; i < res.length; i++) {
-                        var $cur = $('tr').last();
-                        $cur.after('<tr><td><a href="/cafa/int/view_contract/' + res[i].hid + '">' + res[i].street + ', ' + res[i].city + ', ' + res[i].state + ' ' + res[i].zip + '</a></td>' + rpush(res[i].lat) + rpush(res[i].lon) + rpush(res[i].hid) + '</tr>');
-                    }
+        #fm
+            .container
+                  .panel.panel-default
+                      .panel-heading Houses
+                          table.table#house-table
+                              tr#start
+                                  th Address
+                                  th Latitude
+                                  th Longitude
+                                  th ID
+                  .button
+                    a.glyphicon.glyphicon-plus(href='/cafa/int/new_contract')
+            script(src="https://code.jquery.com/jquery-3.1.1.min.js")
+            script.
+                function rpush(x) {
+                    return '<td>' + x + '</td>';
                 }
-            })
+
+                $.ajax({
+                    url: '/cafa/api/get_contracts',
+                    success: function(res) {
+                        for (var i = 0; i < res.length; i++) {
+                            var $cur = $('tr').last();
+                            $cur.after('<tr><td><a href="/cafa/int/view_contract/' + res[i].hid + '">' + res[i].street + ', ' + res[i].city + ', ' + res[i].state + ' ' + res[i].zip + '</a></td>' + rpush(res[i].lat) + rpush(res[i].lon) + rpush(res[i].hid) + '</tr>');
+                        }
+                    }
+                })
