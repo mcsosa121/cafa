@@ -37,7 +37,7 @@ def create_contract(request):
         zip = request.POST.get('zip', False)
         contract = House(lat=lat, lon=lon,street=street,city=city,state=state,zip=zip,img_docfile=docfile)
         contract.save()
-        return HttpResponseRedirect('/cafe/int/dashboard')
+        return HttpResponseRedirect('/cafa/int/dashboard')
     raise Http404("u missin stuff!!!!")
 
 def house_cereal(houses):
