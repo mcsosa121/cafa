@@ -84,6 +84,7 @@ button {
     background-size: cover;
     position: relative;
     display: table;
+    overflow: auto;
 }
 
 .top {
@@ -155,6 +156,7 @@ button {
 }
 .panel {
   background-color: fafafa;
+  overflow: auto;
 }
 
 .panel-default > .panel-heading {
