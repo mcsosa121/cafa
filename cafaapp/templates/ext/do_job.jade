@@ -4,8 +4,9 @@ html
         #corn
             .container
                 .jumbotron.vertical-center
-                    h2 Job: #{job}
-                    h3 Please leave any comments on the job below.
+                    h2 Job: #{type}
+                    p #{comment}
+                    h3 Please leave any comments on the job below once you have completed it.
                     form#wowww(action='/cafa/api/complete_job' method='post')
                         .mdl-textfield.mdl-js-textfield
                             label.mdl-textfield__label(for='comment') Comment
