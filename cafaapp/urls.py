@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^cafa/int/dashboard', views.dash, name='dash'),
     url(r'^cafa/int/new_contract', views.newcontract, name='newcontract'),
     url(r'^cafa/int/view_contract', views.viewcontract, name='viewcontract'),
+    url(r'^cafa/int/mfga', views.mfga, name='mfga'),
     url(r'^cafa/ext/login$', views.loginext, name='loginexit'),
     url(r'^cafa/ext/job$', views.job, name='job'),
     url(r'^cafa/ext/jobupdated$', views.jobupdated, name='jobupdated'),

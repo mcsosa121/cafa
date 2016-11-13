@@ -77,12 +77,15 @@ def newcontract(request):
     template = loader.get_template("cafaapp/templates/int/new_contract.jade")
     return HttpResponse(template.render())
 
+@csrf_exempt
+def mfga(request):
+    template = loader.get_template("cafapp/templates/int/mfga.jade")
+    return HttpResponse(template.render())
 
 @csrf_exempt
 def viewcontract(request):
     template = loader.get_template("cafaapp/templates/int/view_contract.jade")
     return HttpResponse(template.render())
-
 
 @csrf_exempt
 def job(request):
