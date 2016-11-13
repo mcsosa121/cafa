@@ -3,9 +3,11 @@ html
     body
         #corn
             .container
-                .jumbotron.vertical-center
+                .jumbotron
+                    img.boxy(src="/media/#{imgref}")
                     h2 Job: #{type}
                     p #{comment}
+                    p #{street}, #{city}, #{state} #{zip}
                     h3 Please leave any comments on the job below once you have completed it.
                     form#wowww(action='/cafa/api/complete_job' method='post')
                         .mdl-textfield.mdl-js-textfield

@@ -30,14 +30,16 @@ html
                             th Request
                             th Comments
                             th Image
-                        for job in jobs
+                        each job, i in jobs
                             tr
                                 td #{job.type}
                                 td #{job.jid}
                                 td #{job.completed}
                                 td #{job.request_comment}
                                 td #{job.completion_comment}
-                                td to do
+                                td #{job.img_ref}
+
+
                 .button
                     a.glyphicon.glyphicon-plus(href='/cafa/int/new_job')
           script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh53x5vw5NPtjK4f57EMMzdT49y7AZp5k&callback=initMap").

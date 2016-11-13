@@ -8,6 +8,8 @@ from django.shortcuts import render
 
 from cafaapp.models import Job
 from cafaapp.models import House
+from cafaapp.models import Image
+
 
 
 # Lazy user creation
@@ -114,6 +116,10 @@ def viewcontract(request):
         wow['request_comment']=djobs[i].request_comment
         wow['completion_comment']=djobs[i].completion_comment
         wow['completed']=not (djobs[i].completion_time is None)
+        wow['img_ref']="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background"
+        temp=Image.objects.filter(job_ref=djobs[i].jid)
+        if (len(temp) > 0):
+             wow['img_ref']= str(temp[0].docfile)
         jobs.append(wow)
     request.session['jobs'] = jobs
     return HttpResponse(template.render(context=request.session))
@@ -127,6 +133,11 @@ def job(request):
         request.session['jid']=j
         request.session['type']=actualJob.type
         request.session['comment']=actualJob.request_comment
+        request.session['imgref']= str(actualJob.house_ref.img_docfile)
+        request.session['street'] = actualJob.house_ref.street
+        request.session['city'] = actualJob.house_ref.city
+        request.session['state'] = actualJob.house_ref.state
+        request.session['zip'] = actualJob.house_ref.zip
         template = loader.get_template("cafaapp/templates/ext/do_job.jade")
         return HttpResponse(template.render(context=request.session))
 
