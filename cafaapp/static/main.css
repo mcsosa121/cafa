@@ -55,6 +55,16 @@ button {
     display: table;
 }
 
+.boxy {
+    width: 300px;
+    height: 300px;
+}
+
+.smallboxy {
+    width: 150px;
+    height: 150px;
+}
+
 #yhack {
     background: url("/static/img/yhack.png")  no-repeat center center scroll;
     width: 100%;
