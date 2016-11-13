@@ -50,6 +50,7 @@ def house_cereal(houses):
         wow['lat']= houses[i].lat
         wow['street']= houses[i].street
         wow['city']= houses[i].city
+        wow['state']= houses[i].state
         wow['zip']= houses[i].zip
         wow['img']= '/cafa/media/' + force_text(houses[i].img_docfile)
 
