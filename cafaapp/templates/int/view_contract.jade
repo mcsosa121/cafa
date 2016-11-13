@@ -1,15 +1,18 @@
 html
     include _common
     body
-        H1 Contract-Job Dashboard
+        #fm
+          H1 Contract-Job Dashboard
+          H2 Map Location
+          H2 Jobs
 
 
 
-        script(src="https://code.jquery.com/jquery-3.1.1.min.js")
-        script.
-            $.ajax({
-                url: '/cafa/api/get_contracts',
-                success: function(res) {
-                        $('H1').after('<h2>'+ res[0].street + '</h2>');
-                    }
-                })
+          script(src="https://code.jquery.com/jquery-3.1.1.min.js")
+          script.
+              $.ajax({
+                  url: '/cafa/api/get_contracts',
+                  success: function(res) {
+                          $('H1').after('<h2>'+ res[0].street + '</h2>');
+                      }
+                  })
