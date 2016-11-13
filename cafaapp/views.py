@@ -81,7 +81,7 @@ def newcontract(request):
 
 @csrf_exempt
 def mfga(request):
-    template = loader.get_template("cafapp/templates/int/mfga.jade")
+    template = loader.get_template("cafaapp/templates/int/mfga.jade")
     return HttpResponse(template.render())
 
 @csrf_exempt
